@@ -41,9 +41,9 @@ jobs:
           echo "Building Docker image..."
           echo "ECR Repository URI: ${{ secrets.ECR_REPOSITORY_URI }}"
         
-          docker build -t ${{ secrets.ECR_REPOSITORY_URI }}:latest .
+          docker build -t ${{ secrets.ECR_REPOSITORY_URI }}:strapi-task5 .
 
       - name: Push Docker Image to Amazon ECR
         run: |
           echo "Pushing Docker image..."
-          docker push ${{ secrets.ECR_REPOSITORY_URI }}:latest
+          docker push ${{ secrets.ECR_REPOSITORY_URI }}:strapi-task5
